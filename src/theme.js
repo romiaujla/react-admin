@@ -201,13 +201,13 @@ export const ColorModeContext = createContext({ toggleColorMode: () => {} });
 export const useMode = () => {
   const [mode, setMode] = useState("dark");
   const colorMode = useMemo(() => {
-    {
+    return {
       toggleColorMode: () => {
         setMode((prev) => {
-          return prev === "light" ? "dark" : light;
+          return prev === "light" ? "dark" : "light";
         });
-      };
-    }
+      },
+    };
   }, []);
 
   const theme = useMemo(() => createTheme(themeSettings(mode)), [mode]);
