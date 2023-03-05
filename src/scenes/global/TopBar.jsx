@@ -25,7 +25,16 @@ const TopBar = () => {
       backgroundColor={colors.primary[400]}
       borderRadius="3px"
     >
-      <InputBase sx={{ marginLeft: 2, display: 'flex' }} placeholder="Search"></InputBase>
+      <InputBase sx={{
+        marginLeft: 2,
+        display: 'flex',
+        color: (theme) => {
+          if (theme.palette.mode === 'dark') {
+            return theme.palette.grey.dark;
+          };
+          return '#FFF';
+        }
+      }} placeholder="Search"></InputBase>
       <IconButton type="button" sx={{padding: 1}}>
         <SearchIcon />
       </IconButton>
