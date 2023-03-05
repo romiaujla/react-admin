@@ -144,7 +144,7 @@ export const themeSettings = (mode) => {
               light: colors.grey[100],
             },
             background: {
-              default: color.primary[500],
+              default: colors.primary[500],
             },
           }
         : {
@@ -200,6 +200,7 @@ export const ColorModeContext = createContext({ toggleColorMode: () => {} });
 
 export const useMode = () => {
   const [mode, setMode] = useState("dark");
+  console.log("mode", mode);
   const colorMode = useMemo(() => {
     return {
       toggleColorMode: () => {
